@@ -17,9 +17,30 @@ public class caculeResult {
 		return result;
 	}
 	
+	public int gys(int x,int y)
+	{
+		return y?gys(y,x%y):x;
+	}
+	
+	public int gbs(int x,int y)
+	{
+		return x/gys(x,y)*y;
+	}
+	
+	public int yuefen(in x,int y)
+	{
+		int s = gys(x,y);
+		x/=s;
+		y/=s;
+	}
 	
 	public shu add(shu a,shu b)//¼Ó
 	{
+		int afm,afz,bfm,bfz;
+		afm = a.getFenMu;
+		afz = a.getFenZi;
+		bfm = b.getFenMu;
+		bfz = b.getFenZi;
 		shu c = null;
 		return c;
 	}
