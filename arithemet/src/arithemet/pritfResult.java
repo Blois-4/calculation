@@ -7,7 +7,7 @@ public class pritfResult {
 	{
 		
 	}
-	public void printt( int []result, int []userResult)
+	public void printt( shu []result, shu []userResult,int n)
 	{
 		
 	}
