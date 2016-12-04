@@ -8,6 +8,7 @@ public class pritfResult {
 		
 	}
 
+
 	public void printt( shu []result, shu []userResult,int n)
 
 	{
