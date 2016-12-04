@@ -9,59 +9,153 @@ public class geneQuestion {
 
 	public geneQuestion()
 	{
-		r=new Random(100);
+		r=new Random(System.currentTimeMillis());
 	}
+	
+	
 	public int num()
 	{
-		int i=r.nextInt()%11;
+		int i=r.nextInt(1000)%11;
 		return i;
 	}
-	public int num_not_0()
+	
+	public int num_not_0()//生成非0数
 	{
-		int i=r.nextInt()%10+1;
+		int i=r.nextInt(1000)%10+1;
 		return i;
 	}
-	public char sign()
+	
+	public shu fenshu()//生成分数
 	{
-		int i=r.nextInt()%4;
+		shu fenshu=new shu();
+		
+		int zi;
+		int mu;
+	    zi=num_not_0();
+	    mu=num_not_0();
+	    if(mu==1)
+	    {
+	    	mu+=1;
+	    }
+		fenshu.setFenMu(mu);
+		fenshu.setFenZi(zi);
+		return fenshu;
+	}
+	
+	
+	public shu zhengshu(boolean zero)//生成整数
+	{
+		shu zhengshu=new shu();
+		int zi;
+		if(zero==false)
+        zi=num_not_0();
+		else zi=num();
+		zhengshu.setFenZi(zi);
+		
+		return zhengshu;
+	}
+	
+	public boolean isFenshu()//决定生成分数还是整数
+	{
+		int i=r.nextInt(1000)%2;
+		if(i==0)
+		{
+			return false;//不是分数返回false
+		}
+		else return true;//是分数返回true
+	}
+	
+	public char sign()//生成运算符
+	{
+		int i=r.nextInt(1000)%4;
 		if(i==0)return '+';
 		else if(i==1)return '-';
 		else if (i==2)return '*';
 		else return '/';
 	}
-	public void genequestion(Stack numStack,Stack signStack)
+	
+	
+	public void genequestion(Stack<shu> numStack,Stack signStack)
 	{
 	
-		
-			int l=r.nextInt()%2+2;//随机生成运算符数 
+		     boolean zero;
+		     boolean isFenshuOrnot;
+		     shu Shu;
+			int l=r.nextInt(1000)%2+2;//随机生成运算符数 
 			char temp='+';
 			for(int i=0;i<l;i++){
+				
+				 Shu=new shu();
 				int j = 0;
 				if(temp!='/'){
-					
-					j=num();
-					 System.out.print(j+" ");
+					zero=true;
+					isFenshuOrnot=isFenshu();
+					if(isFenshuOrnot)
+					{
+						Shu=fenshu();
+						System.out.print("("+Shu.getFenZi()+"/"+Shu.getFenMu()+")"+" ");
+					}
+					else
+					{
+						Shu=zhengshu(zero);
+						 System.out.print(Shu.getFenZi()+" ");
+					}
+					 
 				}
 				else {
-					j=num_not_0();
-					  System.out.print(j+" ");
+					
+					zero=false;
+					isFenshuOrnot=isFenshu();
+					if(isFenshuOrnot)
+					{
+						Shu=fenshu();
+						System.out.print("("+Shu.getFenZi()+"/"+Shu.getFenMu()+")"+" ");
+					}
+					else
+					{
+						Shu=zhengshu(zero);
+						 System.out.print(Shu.getFenZi()+" ");
+					}
+					
+					  
 				}
 				char s=sign();
 				temp=s;
-				 System.out.print(s+" ");
-				numStack.push(j);
+				System.out.print(s+" ");
+				numStack.push(Shu);
 				signStack.push(s);
 			}
-			int k=num();
+		
 			if(temp!='/'){
-					 k=num();
-					 System.out.print(k+" ");
+				zero=true;
+				isFenshuOrnot=isFenshu();
+				if(isFenshuOrnot)
+				{
+					Shu=fenshu();
+					System.out.print("("+Shu.getFenZi()+"/"+Shu.getFenMu()+")"+" ");
+				}
+				else
+				{
+					Shu=zhengshu(zero);
+					 System.out.print(Shu.getFenZi()+" ");
+				}
+				 
 				}
 				else {
-					 k=num_not_0();
-					 System.out.print(k+" ");
+					zero=false;
+					isFenshuOrnot=isFenshu();
+					if(isFenshuOrnot)
+					{
+						Shu=fenshu();
+						System.out.print("("+Shu.getFenZi()+"/"+Shu.getFenMu()+")"+" ");
+					}
+					else
+					{
+						Shu=zhengshu(zero);
+						 System.out.print(Shu.getFenZi()+" ");
+					}
 				}
-				numStack.push(k);
+				numStack.push(Shu);
 		}
 		
 }
