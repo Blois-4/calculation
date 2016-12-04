@@ -21,7 +21,7 @@ public class caculeResult {
 		
 		shu result;
 		
-		//ÅÐ¶ÏÊÇ·ñÓÐ³Ë³ý,²¢´¦Àí³Ë³ý
+		//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Ð³Ë³ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½
 		while (!signStack.isEmpty())
 		{
 			sign=(char) signStack.pop();
@@ -62,7 +62,7 @@ public class caculeResult {
 		}
 		
 		
-		//½«ÔÝ´æÕ»µÄÄÚÈÝµ¯³ö´æÔÚÖ÷Õ»Àï
+		//ï¿½ï¿½ï¿½Ý´ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½
 		while(!fsignStack.isEmpty())
 		{
 			sign=(char) fsignStack.pop();
@@ -71,7 +71,7 @@ public class caculeResult {
 			numStack.push(a);
 		}
 		
-		//´¦Àí¼Ó¼õ
+		//ï¿½ï¿½ï¿½ï¿½Ó¼ï¿½
 		if(!signStack.isEmpty())
 		{
 			while (!signStack.isEmpty())
@@ -137,7 +137,7 @@ public class caculeResult {
 
 	}
 	
-	public shu add(shu a,shu b)//¼Ó
+	public shu add(shu a,shu b)//ï¿½ï¿½
 	{
   		int afm,afz,bfm,bfz;
  	    int fm,fz;
@@ -153,7 +153,7 @@ public class caculeResult {
  		c=yuefen(c);
   		return c;
 	}
-	public shu sub(shu a,shu b)//¼õ
+	public shu sub(shu a,shu b)//ï¿½ï¿½
 	{
   		int afm,afz,bfm,bfz;
  	    int fm,fz;
@@ -169,7 +169,7 @@ public class caculeResult {
  		c=yuefen(c);
   		return c;
 	}
-	public shu mul(shu a,shu b)//³Ë
+	public shu mul(shu a,shu b)//ï¿½ï¿½
 	{   
 		int afm,afz,bfm,bfz;
 		int fm,fz;
@@ -185,7 +185,7 @@ public class caculeResult {
 		c = yuefen(c);
 		return c;
 	}
-	public shu div(shu a,shu b)//³ý
+	public shu div(shu a,shu b)//ï¿½ï¿½
 	{
 		int afm,afz,bfm,bfz;
 		int fm,fz;
