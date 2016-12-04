@@ -7,18 +7,20 @@ public class pritfResult {
 	{
 		
 	}
-	public void printt( int []result, int []userResult,int n)
+
+	public void printt( shu []result, shu []userResult,int n)
+
 	{
 		
 			int sum=0;
 			for(int i=0;i<n;i++){
-				if(result[i]==userResult[i]){
+				if(result[i].isEqual(userResult[i])){
 					sum++;
-					System.out.println(i+1+".答案正确！");
+					System.out.println((i+1)+".答案正确！");
 					
 				}
 				else{
-					System.out.println(i+1+".答案错误！");
+					System.out.println((i+1)+".答案错误！");
 					
 				}
 					
