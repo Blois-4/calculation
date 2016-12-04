@@ -43,12 +43,18 @@ public class caculeResult {
 				a=numStack.pop();
 				b=numStack.pop();
 				c=mul(a,b);
+				//System.out.println(a.getFenZi()+"/"+a.getFenMu());
+				//System.out.println(b.getFenZi()+"/"+b.getFenMu());
+				//System.out.println(sign);
 				numStack.push(c);
 				break;
 			case '/':
 				a=numStack.pop();
 				b=numStack.pop();
 				c=div(a,b);
+				//System.out.println(a.getFenZi()+"/"+a.getFenMu());
+				//System.out.println(b.getFenZi()+"/"+b.getFenMu());
+				//System.out.println(sign);
 				numStack.push(c);
 				break;
 				
@@ -77,12 +83,18 @@ public class caculeResult {
 					 a=numStack.pop();
 					 b=numStack.pop();
 					 c=add(a,b);
+					// System.out.println(a.getFenZi()+"/"+a.getFenMu());
+						//System.out.println(b.getFenZi()+"/"+b.getFenMu());
+						//System.out.println(sign);
 					 numStack.push(c);
 					 break;
 				 case '-':
 					 a=numStack.pop();
 					 b=numStack.pop();
 					 c=sub(a,b);
+					// System.out.println(a.getFenZi()+"/"+a.getFenMu());
+						//System.out.println(b.getFenZi()+"/"+b.getFenMu());
+						//System.out.println(sign);
 					 numStack.push(c);
 					break;
 				

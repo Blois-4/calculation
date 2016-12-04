@@ -46,7 +46,7 @@ public class arithemet {
 			
 			System.out.println("第"+(i+1)+"题回答：");
 			answer[i]=aa.scanner.nextLine();
-			System.out.println(answer[i]);
+		//	System.out.println(answer[i]);
 		}
 		
 		//将用户答案转成shu类型

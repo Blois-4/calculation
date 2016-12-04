@@ -7,9 +7,14 @@ public class geneQuestion {
 	
 	public Random r;
 
+	public Stack<shu> fnum;
+	public Stack fsign;
 	public geneQuestion()
 	{
 		r=new Random(System.currentTimeMillis());
+		
+		fnum=new Stack<shu>();
+		fsign=new Stack();
 	}
 	
 	
@@ -122,8 +127,8 @@ public class geneQuestion {
 				char s=sign();
 				temp=s;
 				System.out.print(s+" ");
-				numStack.push(Shu);
-				signStack.push(s);
+				fnum.push(Shu);
+				fsign.push(s);
 			}
 		
 			if(temp!='/'){
@@ -132,12 +137,12 @@ public class geneQuestion {
 				if(isFenshuOrnot)
 				{
 					Shu=fenshu();
-					System.out.print("("+Shu.getFenZi()+"/"+Shu.getFenMu()+")"+" ");
+					System.out.println("("+Shu.getFenZi()+"/"+Shu.getFenMu()+")");
 				}
 				else
 				{
 					Shu=zhengshu(zero);
-					 System.out.print(Shu.getFenZi()+" ");
+					 System.out.println(Shu.getFenZi());
 				}
 				 
 				}
@@ -147,15 +152,35 @@ public class geneQuestion {
 					if(isFenshuOrnot)
 					{
 						Shu=fenshu();
-						System.out.print("("+Shu.getFenZi()+"/"+Shu.getFenMu()+")"+" ");
+						System.out.println("("+Shu.getFenZi()+"/"+Shu.getFenMu()+")");
 					}
 					else
 					{
 						Shu=zhengshu(zero);
-						 System.out.print(Shu.getFenZi()+" ");
+						 System.out.println(Shu.getFenZi());
 					}
 				}
-				numStack.push(Shu);
+			    fnum.push(Shu);
+			
+			   // System.out.println(fnum.size());
+				//System.out.println(fsign.size());
+				while(!fnum.isEmpty())
+				{	
+					
+					shu shu1=new shu();
+					shu1=fnum.pop();
+					//System.out.println("("+shu1.getFenZi()+"/"+shu1.getFenMu()+")");
+					numStack.push(shu1);
+				}
+				while(!fsign.isEmpty()){
+					
+					char c=(char) fsign.pop();
+					signStack.push(c);
+				}
+				//System.out.println(numStack.size());
+				//System.out.println(signStack.size());
 		}
+	
+	   
 		
 }

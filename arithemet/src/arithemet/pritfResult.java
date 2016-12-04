@@ -21,6 +21,7 @@ public class pritfResult {
 				}
 				else{
 					System.out.println((i+1)+".´ğ°¸´íÎó£¡");
+					System.out.println(result[i].getFenZi()+"/"+result[i].getFenMu());
 					
 				}
 					
