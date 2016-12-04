@@ -127,8 +127,6 @@ public class caculeResult {
 	
 	public shu add(shu a,shu b)//��
 	{
-
-
   		int afm,afz,bfm,bfz;
  	    int fm,fz;
  		afm = a.getFenMu();
@@ -145,8 +143,19 @@ public class caculeResult {
 	}
 	public shu sub(shu a,shu b)//��
 	{
-		shu c = null;
-		return c;
+  		int afm,afz,bfm,bfz;
+ 	    int fm,fz;
+ 		afm = a.getFenMu();
+ 		afz = a.getFenZi();
+ 		bfm = b.getFenMu();
+ 	    bfz = b.getFenZi();
+ 		fm = gbs(afm,bfm);
+ 		fz = fm/afm*afz - fm/bfm*bfz;
+ 		shu c = new shu();
+ 		c.setFenMu(fm);
+ 		c.setFenZi(fz);
+ 		c=yuefen(c);
+  		return c;
 	}
 	public shu mul(shu a,shu b)//��
 	{   

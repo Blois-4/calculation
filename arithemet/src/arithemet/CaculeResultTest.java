@@ -29,7 +29,7 @@ public class CaculeResultTest {
 	@Test
 	public void testSub() {
 		shu shu1 = new shu(1,2);
-		shu shu2 = new shu(3,1);
+		shu shu2 = new shu(1,3);
 		shu result = mCaculeResult.sub(shu1, shu2);
 		
 		assertEquals(1, result.getFenZi());
