@@ -129,8 +129,6 @@ public class caculeResult {
 	{
 
 
-		
-
   		int afm,afz,bfm,bfz;
  	    int fm,fz;
  		afm = a.getFenMu();

@@ -38,8 +38,8 @@ public class testcalYuefen {
 	public void tyuefen(){
 		//test 是相当于把你要做的放在里面
 		//有返回值的可以用下面的判断返回值是不是和预期一样，比如10和5公约数2
-		System.out.println( cale.yuefen(10,5));
-		Assert.assertEquals(5, cale.yuefen(10,5));
+	//	System.out.println( cale.yuefen(10,5));
+	//	Assert.assertEquals(5, cale.yuefen(10,5));
 		
 
 	}

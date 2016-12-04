@@ -33,7 +33,7 @@ public class testcRmain {
 	
 	
 	@Test
-	public void tjia(){
+	public void tcacul(){
 		
 		shu a=new shu(5,5);
 		char sign='+';
