@@ -9,7 +9,7 @@ public class geneQuestion {
 
 	public geneQuestion()
 	{
-		r=new Random(1000);
+		r=new Random(System.currentTimeMillis());
 	}
 	
 	
