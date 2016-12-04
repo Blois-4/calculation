@@ -119,7 +119,7 @@ public class caculeResult {
 		int s = gys(x,y);
 		x/=s;
 		c.setFenZi(x);
-		y/=s;
+		y/=s;	
 		c.setFenMu(y);
 		return c;
 
@@ -149,13 +149,35 @@ public class caculeResult {
 		return c;
 	}
 	public shu mul(shu a,shu b)//³Ë
-	{
+	{   
+		int afm,afz,bfm,bfz;
+		int fm,fz;
+		afm = a.getFenMu();
+		afz = a.getFenZi();
+		bfm = b.getFenMu();
+		bfz = b.getFenZi();
+		fm = afm*bfm;
+		fz = afz*bfz;
 		shu c = null;
+		c.setFenZi(fz);
+		c.setFenMu(fm);
+		c = yuefen(c);
 		return c;
 	}
 	public shu div(shu a,shu b)//³ý
 	{
+		int afm,afz,bfm,bfz;
+		int fm,fz;
+		afm = a.getFenMu();
+		afz = a.getFenZi();
+		bfm = b.getFenMu();
+		bfz = b.getFenZi();
+		fm = afm*bfz;
+		fz = afz*bfm;
 		shu c = null;
+		c.setFenZi(fz);
+		c.setFenMu(fm);
+		c = yuefen(c);
 		return c;
 	}
 
