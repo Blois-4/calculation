@@ -34,7 +34,7 @@ public class testgeneQusetion {
 	public void tfenshu(){
 		
 		shu shu1=new shu();
-		shu1=gene.zhengshu(true);
+		shu1=gene.fenshu();
 		System.out.println(shu1.getFenZi()+"/"+shu1.getFenMu());
 		
 	//	Assert.assertEquals(true,Shu1.isEqual(Shu2));
@@ -44,14 +44,18 @@ public class testgeneQusetion {
 	@Test
 	public void tzhengshu(){
 		
-		
+		shu shu1=new shu();
+		shu1=gene.zhengshu(true);
+		System.out.println(shu1.getFenZi()+"/"+shu1.getFenMu());
 	//	Assert.assertEquals(true,Shu1.isEqual(Shu2));
 		
 	}
 	@Test
 	public void tsign(){
 		
-		
+		char c;
+		c=gene.sign();
+		System.out.println(c);
 	//	Assert.assertEquals(true,Shu1.isEqual(Shu2));
 		
 	}
