@@ -127,8 +127,6 @@ public class caculeResult {
 	
 	public shu add(shu a,shu b)//¼Ó
 	{
-
-
   		int afm,afz,bfm,bfz;
  	    int fm,fz;
  		afm = a.getFenMu();
@@ -137,7 +135,7 @@ public class caculeResult {
  	    bfz = b.getFenZi();
  		fm = gbs(afm,bfm);
  		fz = fm/afm*afz + fm/bfm*bfz;
- 		shu c=null;
+ 		shu c = new shu();
  		c.setFenMu(fm);
  		c.setFenZi(fz);
  		c=yuefen(c);
@@ -145,8 +143,19 @@ public class caculeResult {
 	}
 	public shu sub(shu a,shu b)//¼õ
 	{
-		shu c = null;
-		return c;
+  		int afm,afz,bfm,bfz;
+ 	    int fm,fz;
+ 		afm = a.getFenMu();
+ 		afz = a.getFenZi();
+ 		bfm = b.getFenMu();
+ 	    bfz = b.getFenZi();
+ 		fm = gbs(afm,bfm);
+ 		fz = fm/afm*afz - fm/bfm*bfz;
+ 		shu c = new shu();
+ 		c.setFenMu(fm);
+ 		c.setFenZi(fz);
+ 		c=yuefen(c);
+  		return c;
 	}
 	public shu mul(shu a,shu b)//³Ë
 	{   
@@ -158,7 +167,7 @@ public class caculeResult {
 		bfz = b.getFenZi();
 		fm = afm*bfm;
 		fz = afz*bfz;
-		shu c = null;
+		shu c = new shu();
 		c.setFenZi(fz);
 		c.setFenMu(fm);
 		c = yuefen(c);
@@ -174,7 +183,7 @@ public class caculeResult {
 		bfz = b.getFenZi();
 		fm = afm*bfz;
 		fz = afz*bfm;
-		shu c = null;
+		shu c = new shu();
 		c.setFenZi(fz);
 		c.setFenMu(fm);
 		c = yuefen(c);
