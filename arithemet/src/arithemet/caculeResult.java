@@ -95,11 +95,45 @@ public class caculeResult {
 		return result;
 	}
 	
+	public int gys(int x,int y)
+	{
+		return y!=0 ? gys(y,x%y):x;
+	}
+	
+	public int gbs(int x,int y)
+	{
+		return x/gys(x,y)*y;
+	}
+	
+	public int yuefen(int x,int y)
+	{
+		int s = gys(x,y);
+		x/=s;
+		y/=s;
+		return s;
+		
+		
+	}
 	
 	public shu add(shu a,shu b)//加
 	{
+
 		
 		shu c = new shu(1,1);
+		int afm,afz,bfm,bfz,cfm,cfz;
+		afm = a.getFenMu();//取出a的分母
+		afz = a.getFenZi();//取出a的分子
+		bfm = b.getFenMu();//取出b的分母
+		bfz = b.getFenZi();//取出b的分子
+		if(afm==bfm)
+		{
+			cfz=bfz+afz;
+			
+		}
+		else
+		{
+			
+		}
 		return c;
 	}
 	public shu sub(shu a,shu b)//减
