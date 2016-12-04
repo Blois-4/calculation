@@ -28,5 +28,13 @@ public class shu {
 		this.fenMu = fenMu;
 	}
 
+	public boolean isEqual(shu other)
+	{
+		
+		if(this.getFenZi()==other.getFenZi()&&this.getFenMu()==other.getFenMu())
+		return true;
+		else 
+		return false;
+	}
 	
 }
