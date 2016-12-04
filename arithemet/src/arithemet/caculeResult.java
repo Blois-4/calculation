@@ -19,7 +19,7 @@ public class caculeResult {
 	
 	public int gys(int x,int y)
 	{
-		return y?gys(y,x%y):x;
+		return (y!=0)?gys(y,x%y):x;
 	}
 	
 	public int gbs(int x,int y)
@@ -27,21 +27,32 @@ public class caculeResult {
 		return x/gys(x,y)*y;
 	}
 	
-	public int yuefen(in x,int y)
+	public shu yuefen(shu c)
 	{
+		int x=c.getFenZi();
+		int y=c.getFenMu();
 		int s = gys(x,y);
 		x/=s;
+		c.setFenZi(x);
 		y/=s;
+		c.setFenMu(y);
+		return c;
 	}
 	
 	public shu add(shu a,shu b)//¼Ó
 	{
 		int afm,afz,bfm,bfz;
-		afm = a.getFenMu;
-		afz = a.getFenZi;
-		bfm = b.getFenMu;
-		bfz = b.getFenZi;
-		shu c = null;
+		int fm,fz;
+		afm = a.getFenMu();
+		afz = a.getFenZi();
+		bfm = b.getFenMu();
+		bfz = b.getFenZi();
+		fm = gbs(afm,bfm);
+		fz = fm/afm*afz + fm/bfm*bfz;
+		shu c=null;
+		c.setFenMu(fm);
+		c.setFenZi(fz);
+		c=yuefen(c);
 		return c;
 	}
 	public shu sub(shu a,shu b)//¼õ
