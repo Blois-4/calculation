@@ -10,16 +10,97 @@ public class caculeResult {
 	}
 	
 	
-	public int cacul(Stack<shu> numStack,Stack signStack,int num,shu []resultArray)
+	public shu cacul(Stack<shu> numStack,Stack signStack)
 	{
 		
-		int result = 0;
+		Stack <shu> fnumStack=new Stack<shu>();
+		Stack fsignStack =new Stack();
+		char sign;
+		shu fzhu;
+		shu a,b,c;
+		
+		shu result;
+		
+		//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Ð³Ë³ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½
+		while (!signStack.isEmpty())
+		{
+			sign=(char) signStack.pop();
+			switch(sign)
+			{
+			case '+':
+				
+				fzhu=numStack.pop();
+				fnumStack.push(fzhu);
+				fsignStack.push(sign);
+				break;
+			case '-':
+				fzhu=numStack.pop();
+				fnumStack.push(fzhu);
+				fsignStack.push(sign);
+				break;
+			case '*':
+				
+				a=numStack.pop();
+				b=numStack.pop();
+				c=mul(a,b);
+				numStack.push(c);
+				break;
+			case '/':
+				a=numStack.pop();
+				b=numStack.pop();
+				c=div(a,b);
+				numStack.push(c);
+				break;
+				
+			}
+		}
+		
+		
+		//ï¿½ï¿½ï¿½Ý´ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½
+		while(!fsignStack.isEmpty())
+		{
+			sign=(char) fsignStack.pop();
+			signStack.push(sign);
+			a=fnumStack.pop();
+			numStack.push(a);
+		}
+		
+		//ï¿½ï¿½ï¿½ï¿½Ó¼ï¿½
+		if(!signStack.isEmpty())
+		{
+			while (!signStack.isEmpty())
+			{
+				sign=(char) signStack.pop();
+				switch(sign)
+				{
+				 case '+':
+					 a=numStack.pop();
+					 b=numStack.pop();
+					 c=add(a,b);
+					 numStack.push(c);
+					 break;
+				 case '-':
+					 a=numStack.pop();
+					 b=numStack.pop();
+					 c=sub(a,b);
+					 numStack.push(c);
+					break;
+				
+					
+				}
+			}
+		}
+		
+		result=numStack.pop();
 		return result;
 	}
 	
 	public int gys(int x,int y)
 	{
+
+
 		return (y!=0)?gys(y,x%y):x;
+
 	}
 	
 	public int gbs(int x,int y)
@@ -27,7 +108,11 @@ public class caculeResult {
 		return x/gys(x,y)*y;
 	}
 	
+
+
+
 	public shu yuefen(shu c)
+
 	{
 		int x=c.getFenZi();
 		int y=c.getFenMu();
@@ -37,30 +122,33 @@ public class caculeResult {
 		y/=s;	
 		c.setFenMu(y);
 		return c;
+
 	}
 	
-	public shu add(shu a,shu b)//¼Ó
+	public shu add(shu a,shu b)//ï¿½ï¿½
 	{
-		int afm,afz,bfm,bfz;
-		int fm,fz;
-		afm = a.getFenMu();
-		afz = a.getFenZi();
-		bfm = b.getFenMu();
-		bfz = b.getFenZi();
-		fm = gbs(afm,bfm);
-		fz = fm/afm*afz + fm/bfm*bfz;
-		shu c=null;
-		c.setFenMu(fm);
-		c.setFenZi(fz);
-		c=yuefen(c);
-		return c;
+
+
+  		int afm,afz,bfm,bfz;
+ 	    int fm,fz;
+ 		afm = a.getFenMu();
+ 		afz = a.getFenZi();
+ 		bfm = b.getFenMu();
+ 	    bfz = b.getFenZi();
+ 		fm = gbs(afm,bfm);
+ 		fz = fm/afm*afz + fm/bfm*bfz;
+ 		shu c = new shu();
+ 		c.setFenMu(fm);
+ 		c.setFenZi(fz);
+ 		c=yuefen(c);
+  		return c;
 	}
-	public shu sub(shu a,shu b)//¼õ
+	public shu sub(shu a,shu b)//ï¿½ï¿½
 	{
 		shu c = null;
 		return c;
 	}
-	public shu mul(shu a,shu b)//³Ë
+	public shu mul(shu a,shu b)//ï¿½ï¿½
 	{   
 		int afm,afz,bfm,bfz;
 		int fm,fz;
@@ -70,13 +158,13 @@ public class caculeResult {
 		bfz = b.getFenZi();
 		fm = afm*bfm;
 		fz = afz*bfz;
-		shu c = null;
+		shu c = new shu();
 		c.setFenZi(fz);
 		c.setFenMu(fm);
 		c = yuefen(c);
 		return c;
 	}
-	public shu div(shu a,shu b)//³ý
+	public shu div(shu a,shu b)//ï¿½ï¿½
 	{
 		int afm,afz,bfm,bfz;
 		int fm,fz;
@@ -86,11 +174,13 @@ public class caculeResult {
 		bfz = b.getFenZi();
 		fm = afm*bfz;
 		fz = afz*bfm;
-		shu c = null;
+		shu c = new shu();
 		c.setFenZi(fz);
 		c.setFenMu(fm);
 		c = yuefen(c);
 		return c;
 	}
+
+
 	
 }
