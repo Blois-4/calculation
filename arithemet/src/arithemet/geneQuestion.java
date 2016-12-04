@@ -15,13 +15,13 @@ public class geneQuestion {
 	
 	public int num()
 	{
-		int i=r.nextInt()%11;
+		int i=r.nextInt(1000)%11;
 		return i;
 	}
 	
 	public int num_not_0()//生成非0数
 	{
-		int i=r.nextInt()%10+1;
+		int i=r.nextInt(1000)%10+1;
 		return i;
 	}
 	
@@ -57,7 +57,7 @@ public class geneQuestion {
 	
 	public boolean isFenshu()//决定生成分数还是整数
 	{
-		int i=r.nextInt()%2;
+		int i=r.nextInt(1000)%2;
 		if(i==0)
 		{
 			return false;//不是分数返回false
@@ -67,7 +67,7 @@ public class geneQuestion {
 	
 	public char sign()//生成运算符
 	{
-		int i=r.nextInt()%4;
+		int i=r.nextInt(1000)%4;
 		if(i==0)return '+';
 		else if(i==1)return '-';
 		else if (i==2)return '*';
@@ -81,7 +81,7 @@ public class geneQuestion {
 		     boolean zero;
 		     boolean isFenshuOrnot;
 		     shu Shu;
-			int l=r.nextInt()%2+2;//随机生成运算符数 
+			int l=r.nextInt(1000)%2+2;//随机生成运算符数 
 			char temp='+';
 			for(int i=0;i<l;i++){
 				
