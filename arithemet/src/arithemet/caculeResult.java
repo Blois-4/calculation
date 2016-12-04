@@ -145,17 +145,17 @@ public class caculeResult {
 	}
 	public shu sub(shu a,shu b)//¼õ
 	{
-		shu c = new shu(1,1);
+		shu c = null;
 		return c;
 	}
 	public shu mul(shu a,shu b)//³Ë
 	{
-		shu c = new shu(1,1);
+		shu c = null;
 		return c;
 	}
 	public shu div(shu a,shu b)//³ý
 	{
-		shu c = new shu(1,1);
+		shu c = null;
 		return c;
 	}
 
