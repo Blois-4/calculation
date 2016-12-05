@@ -152,12 +152,12 @@ public class geneQuestion {
 					if(isFenshuOrnot)
 					{
 						Shu=fenshu();
-						System.out.println("("+Shu.getFenZi()+"/"+Shu.getFenMu()+")");
+						System.out.println("("+Shu.getFenZi()+"/"+Shu.getFenMu()+")"+"=");
 					}
 					else
 					{
 						Shu=zhengshu(zero);
-						 System.out.println(Shu.getFenZi());
+						 System.out.println(Shu.getFenZi()+"=");
 					}
 				}
 			    fnum.push(Shu);

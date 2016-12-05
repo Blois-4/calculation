@@ -21,7 +21,7 @@ public class caculeResult {
 		
 		shu result;
 		
-		//�ж��Ƿ��г˳�,������˳�
+		//锟叫讹拷锟角凤拷锟叫乘筹拷,锟斤拷锟斤拷锟斤拷顺锟�
 		while (!signStack.isEmpty())
 		{
 			sign=(char) signStack.pop();
@@ -62,7 +62,7 @@ public class caculeResult {
 		}
 		
 		
-		//���ݴ�ջ�����ݵ���������ջ��
+		//锟斤拷锟捷达拷栈锟斤拷锟斤拷锟捷碉拷锟斤拷锟斤拷锟斤拷锟斤拷栈锟斤拷
 		while(!fsignStack.isEmpty())
 		{
 			sign=(char) fsignStack.pop();
@@ -71,7 +71,7 @@ public class caculeResult {
 			numStack.push(a);
 		}
 		
-		//����Ӽ�
+		//锟斤拷锟斤拷蛹锟�
 		if(!signStack.isEmpty())
 		{
 			while (!signStack.isEmpty())
@@ -137,7 +137,7 @@ public class caculeResult {
 
 	}
 	
-	public shu add(shu a,shu b)//��
+	public shu add(shu a,shu b)//锟斤拷
 	{
   		int afm,afz,bfm,bfz;
  	    int fm,fz;
@@ -150,10 +150,15 @@ public class caculeResult {
  		shu c = new shu();
  		c.setFenMu(fm);
  		c.setFenZi(fz);
+ 		if(c.getFenMu()<0)
+ 		{
+ 			c.setFenMu(c.getFenMu()*-1);
+ 			c.setFenZi(c.getFenZi()*-1);
+ 		}
  		c=yuefen(c);
   		return c;
 	}
-	public shu sub(shu a,shu b)//��
+	public shu sub(shu a,shu b)//锟斤拷
 	{
   		int afm,afz,bfm,bfz;
  	    int fm,fz;
@@ -166,10 +171,15 @@ public class caculeResult {
  		shu c = new shu();
  		c.setFenMu(fm);
  		c.setFenZi(fz);
+ 		if(c.getFenMu()<0)
+ 		{
+ 			c.setFenMu(c.getFenMu()*-1);
+ 			c.setFenZi(c.getFenZi()*-1);
+ 		}
  		c=yuefen(c);
   		return c;
 	}
-	public shu mul(shu a,shu b)//��
+	public shu mul(shu a,shu b)//锟斤拷
 	{   
 		int afm,afz,bfm,bfz;
 		int fm,fz;
@@ -182,10 +192,15 @@ public class caculeResult {
 		shu c = new shu();
 		c.setFenZi(fz);
 		c.setFenMu(fm);
+		if(c.getFenMu()<0)
+ 		{
+ 			c.setFenMu(c.getFenMu()*-1);
+ 			c.setFenZi(c.getFenZi()*-1);
+ 		}
 		c = yuefen(c);
 		return c;
 	}
-	public shu div(shu a,shu b)//��
+	public shu div(shu a,shu b)//锟斤拷
 	{
 		int afm,afz,bfm,bfz;
 		int fm,fz;
@@ -198,6 +213,11 @@ public class caculeResult {
 		shu c = new shu();
 		c.setFenZi(fz);
 		c.setFenMu(fm);
+		if(c.getFenMu()<0)
+ 		{
+ 			c.setFenMu(c.getFenMu()*-1);
+ 			c.setFenZi(c.getFenZi()*-1);
+ 		}
 		c = yuefen(c);
 		return c;
 	}

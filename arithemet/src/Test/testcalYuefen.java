@@ -1,4 +1,4 @@
-package arithemet;
+package Test;
 
 import java.util.Stack;
 
@@ -8,13 +8,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import arithemet.caculeResult;
 import junit.framework.Assert;
 
-public class testShu {
+public class testcalYuefen {
 
-	shu Shu1;
-	shu Shu2;
-
+	//此处记得定义
+	caculeResult cale;
 	@BeforeClass
     public static void bc(){
     	System.out.println("beforeClass");
@@ -24,10 +24,11 @@ public class testShu {
 	@Before
 	public void tbefore()
 	{  
-	   Shu1=new shu();
-	   Shu2=new shu();
-	   System.out.println("before");
-	
+		//before是用来初始化
+	    cale=new caculeResult();
+		
+		System.out.println("before");
+		
 		
 	}
 	
@@ -35,17 +36,13 @@ public class testShu {
 	
 	
 	@Test
-	public void tisEqual(){
+	public void tyuefen(){
+		//test 是相当于把你要做的放在里面
+		//有返回值的可以用下面的判断返回值是不是和预期一样，比如10和5公约数2
+	//	System.out.println( cale.yuefen(10,5));
+	//	Assert.assertEquals(5, cale.yuefen(10,5));
 		
-		//Shu1:2/5,Shu2:2/5;return true  ok
-		//Shu1:2/7,Shu2:2/9;return false  ok
-		//Shu1:2,Shu2:2; return true 
-		//Shu1.setFenMu(5);
-		Shu1.setFenZi(2);
-		//Shu2.setFenMu(9);
-		Shu2.setFenZi(2);
-		Assert.assertEquals(true,Shu1.isEqual(Shu2));
-		
+
 	}
 
 	
@@ -62,6 +59,5 @@ public class testShu {
 	    	System.out.println("afterClass");
 	    }
  
-
 
 }

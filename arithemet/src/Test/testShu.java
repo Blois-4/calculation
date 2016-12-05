@@ -1,4 +1,4 @@
-package arithemet;
+package Test;
 
 import java.util.Stack;
 
@@ -8,11 +8,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import arithemet.shu;
 import junit.framework.Assert;
 
-public class testcRmain {
+public class testShu {
 
-	caculeResult cale;
+	shu Shu1;
+	shu Shu2;
+
 	@BeforeClass
     public static void bc(){
     	System.out.println("beforeClass");
@@ -22,10 +25,10 @@ public class testcRmain {
 	@Before
 	public void tbefore()
 	{  
-	    cale=new caculeResult();
-		System.out.println("before");
-		System.out.println("before");
-		
+	   Shu1=new shu();
+	   Shu2=new shu();
+	   System.out.println("before");
+	
 		
 	}
 	
@@ -33,27 +36,16 @@ public class testcRmain {
 	
 	
 	@Test
-	public void tcacul(){
+	public void tisEqual(){
 		
-		shu a=new shu(5,5);
-		char sign='+';
-		Stack <shu>num=new Stack();
-		for (int i=0;i<4;i++){
-			num.push(a);
-			
-		}
-		Stack s=new Stack();
-		for (int i=0;i<3;i++){
-			s.push(sign);
-			
-		}
-		
-		
-		for (int i=0;i<5;i++){
-			num.push(a);
-			
-		}
-		Assert.assertEquals(1, cale.cacul(num,s).getFenZi());
+		//Shu1:2/5,Shu2:2/5;return true  ok
+		//Shu1:2/7,Shu2:2/9;return false  ok
+		//Shu1:2,Shu2:2; return true 
+		//Shu1.setFenMu(5);
+		Shu1.setFenZi(2);
+		//Shu2.setFenMu(9);
+		Shu2.setFenZi(2);
+		Assert.assertEquals(true,Shu1.isEqual(Shu2));
 		
 	}
 
@@ -73,6 +65,4 @@ public class testcRmain {
  
 
 
-	
-	
 }

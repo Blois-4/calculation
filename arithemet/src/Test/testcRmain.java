@@ -1,4 +1,4 @@
-package arithemet;
+package Test;
 
 import java.util.Stack;
 
@@ -8,11 +8,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import arithemet.caculeResult;
+import arithemet.shu;
 import junit.framework.Assert;
 
-public class testcalYuefen {
+public class testcRmain {
 
-	//此处记得定义
 	caculeResult cale;
 	@BeforeClass
     public static void bc(){
@@ -23,9 +24,8 @@ public class testcalYuefen {
 	@Before
 	public void tbefore()
 	{  
-		//before是用来初始化
 	    cale=new caculeResult();
-		
+		System.out.println("before");
 		System.out.println("before");
 		
 		
@@ -35,13 +35,28 @@ public class testcalYuefen {
 	
 	
 	@Test
-	public void tyuefen(){
-		//test 是相当于把你要做的放在里面
-		//有返回值的可以用下面的判断返回值是不是和预期一样，比如10和5公约数2
-	//	System.out.println( cale.yuefen(10,5));
-	//	Assert.assertEquals(5, cale.yuefen(10,5));
+	public void tcacul(){
 		
-
+		shu a=new shu(5,5);
+		char sign='+';
+		Stack <shu>num=new Stack();
+		for (int i=0;i<4;i++){
+			num.push(a);
+			
+		}
+		Stack s=new Stack();
+		for (int i=0;i<3;i++){
+			s.push(sign);
+			
+		}
+		
+		
+		for (int i=0;i<5;i++){
+			num.push(a);
+			
+		}
+		Assert.assertEquals(1, cale.cacul(num,s).getFenZi());
+		
 	}
 
 	
@@ -59,4 +74,7 @@ public class testcalYuefen {
 	    }
  
 
+
+	
+	
 }

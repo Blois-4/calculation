@@ -1,4 +1,4 @@
-package arithemet;
+package Test;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import arithemet.geneQuestion;
+import arithemet.shu;
 import junit.framework.Assert;
 
 public class testgeneQusetion {
